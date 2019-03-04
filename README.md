@@ -5,6 +5,8 @@
 mkdir -P ~/Projects/dotfiles
 cd ~/Projects/dotfiles
 ln -sv $(pwd)/.aliases ~
+ln -sv $(pwd)/.tmux.conf ~
+ln -sv $(pwd)/.zshrc ~
 ```
 
 ## How to add another dotfile to this repo(e.g. .tmux.conf)
