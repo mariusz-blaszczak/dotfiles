@@ -14,5 +14,5 @@ mv ~/.tmux.conf .
 ga .
 gc
 gp
-ln -sv $(pwd)/dotfiles/.tmux.conf ~
+ln -sv $(pwd)/.tmux.conf ~
 ```
