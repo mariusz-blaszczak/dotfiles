@@ -20,3 +20,6 @@ gp
 ln -sv $(pwd)/.tmux.conf ~
 ```
 2. Update readme setup with ln command
+
+## Todo
+- [ ] Add script https://github.com/ajmalsiddiqui/dotfiles/blob/master/bootstrap.exclude.sh and update the setup readme
