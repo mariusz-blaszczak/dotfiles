@@ -10,6 +10,7 @@ ln -sv $(pwd)/.zshrc ~
 ```
 
 ## How to add another dotfile to this repo(e.g. .tmux.conf)
+1. Execute commands
 ```
 cd ~/Projects/dotfiles
 mv ~/.tmux.conf .
@@ -18,3 +19,4 @@ gc
 gp
 ln -sv $(pwd)/.tmux.conf ~
 ```
+2. Update readme setup with ln command
