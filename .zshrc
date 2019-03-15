@@ -8,7 +8,6 @@ export ZSH="/Users/mariusz/.oh-my-zsh"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -122,7 +121,7 @@ fi
 setopt nocorrectall
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+#export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
 export LDFLAGS="-L/usr/local/opt/libxml2/lib"
@@ -131,4 +130,3 @@ export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.bin/tmuxinator.zsh
-# zprof
