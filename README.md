@@ -7,6 +7,7 @@ cd ~/Projects/dotfiles
 ln -sv $(pwd)/.aliases ~
 ln -sv $(pwd)/.tmux.conf ~
 ln -sv $(pwd)/.zshrc ~
+ln -sv $(pwd)/.functions ~
 ```
 
 ## How to add another dotfile to this repo(e.g. .tmux.conf)

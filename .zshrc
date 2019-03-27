@@ -72,6 +72,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.aliases"
+source "$HOME/.functions"
 # User configuration
 DISABLE_CORRECTION="true"
 setopt CSH_NULL_GLOB
