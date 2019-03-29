@@ -54,7 +54,7 @@
       }
     },
     "BTTTouchBarFontSize" : 15,
-    "BTTSelectedKeyboardTabIndex" : 1,
+    "BTTSelectedKeyboardTabIndex" : 0,
     "BSTSnapAreaDefaultDashedBorder" : false,
     "BSTDontShowSnapAreasWhileModMoving" : 0,
     "BTTForceForceClickPressure3F" : 700,
@@ -127,7 +127,7 @@
     "BTTTouchBarUseMonoSpacedFont" : true,
     "nextMonitorMoveWarningShowed" : true
   },
-  "BTTPresetUUID" : "A67CBFBC-4A11-485A-98BD-E2002275BAFB",
+  "BTTPresetUUID" : "6918459A-6835-4797-9EFA-A4047DE4B875",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "com.googlecode.iterm2",
@@ -135,23 +135,6 @@
       "BTTAppProcessMatchMode" : 2,
       "BTTAppProcessName" : "iTerm2",
       "BTTTriggers" : [
-        {
-          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShortcutToSend" : "59,11",
-          "BTTAdditionalConfiguration" : "8388608",
-          "BTTEnabled2" : 1,
-          "BTTUUID" : "F0939D15-FD93-4276-A215-3D3984AC554E",
-          "BTTTriggerOnDown" : 1,
-          "BTTEnabled" : 1,
-          "BTTShortcutKeyCode" : 90,
-          "BTTShortcutModifierKeys" : 8388608,
-          "BTTOrder" : 0,
-          "BTTKeySequence" : {
-
-          }
-        },
         {
           "BTTTriggerType" : 624,
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
@@ -177,7 +160,7 @@
               "BTTEnabled" : 1,
               "BTTShortcutKeyCode" : -1,
               "BTTShortcutModifierKeys" : -1,
-              "BTTOrder" : 31
+              "BTTOrder" : 0
             }
           ],
           "BTTKeySequence" : {
@@ -382,6 +365,23 @@
               }
             ]
           }
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShortcutToSend" : "59,11",
+          "BTTAdditionalConfiguration" : "8388608",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "F0939D15-FD93-4276-A215-3D3984AC554E",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 90,
+          "BTTShortcutModifierKeys" : 8388608,
+          "BTTOrder" : 0,
+          "BTTKeySequence" : {
+
+          }
         }
       ]
     },
@@ -491,7 +491,9 @@
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 118,
           "BTTPredefinedActionName" : "Insert \/ Type \/ Paste Custom Text",
-          "BTTAdditionalConfiguration" : "1966123",
+          "BTTStringToType" : "Join Zoom Meeting\r\nhttps:\/\/zoom.us\/j\/7481065247",
+          "BTTMoveCursorLeftBy" : "0",
+          "BTTAdditionalConfiguration" : "1966080",
           "BTTEnabled2" : 1,
           "BTTUUID" : "F75E29B7-0A31-4790-A9D7-7CD91F3D09E2",
           "BTTTriggerOnDown" : 1,
@@ -504,7 +506,7 @@
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 218,
           "BTTPredefinedActionName" : "Move Window To Desktop 3",
-          "BTTAdditionalConfiguration" : "1179658",
+          "BTTAdditionalConfiguration" : "1179648",
           "BTTEnabled2" : 1,
           "BTTUUID" : "1C3C20C7-BB22-4D53-9FB6-D25C481D54F5",
           "BTTTriggerOnDown" : 1,
