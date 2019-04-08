@@ -30,8 +30,11 @@ loadnvm(){
   fi
 }
 
-function hardreloadpg() {
+
+function reload_pg() {
   brew services stop postgresql
-  pg_ctl -D /usr/local/var/postgres stop
+  pg_ctl -D /usr/local/var/postgres stop & 
   brew services start postgresql
+  brew services list
+  
 }
