@@ -41,5 +41,6 @@ root: /Users/mariusz/Projects/Ruby/mplatform/csp.mnotification2
 windows:
   - rails_server: bundle exec rails s -p $(cat ~/.puma-dev/mnotification)
   - redis_i_sidekiq: foreman start -f Procfile.development
+  - guard: /Users/mariusz/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/guard-2.15.0/bin/guard
   - rails_console: rails c
   - bash: 
