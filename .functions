@@ -32,9 +32,15 @@ loadnvm(){
 
 
 function reload_pg() {
-  brew services stop postgresql
-  pg_ctl -D /usr/local/var/postgres stop & 
-  brew services start postgresql
-  brew services list
-  
+  echo "brew services stop postgresql"
+  echo "pg_ctl -D /usr/local/var/postgres stop"
+  echo "brew services start postgresql"
+  echo "brew services list"
+  echo ""
+  echo "OR:"
+  echo "brew services stop postgresql"
+  echo "pg_ctl -D /usr/local/var/postgres status"
+  echo "pg_ctl -D /usr/local/var/postgres kill KILL 385"
+  echo "brew services start postgresql"
+  echo "brew services list"  
 }
