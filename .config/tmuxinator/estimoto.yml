@@ -1,0 +1,9 @@
+# /Users/mariusz/.config/tmuxinator/panel-detalisty.yml
+
+name: estimoto
+root: /Users/mariusz/Projects/Ruby/Estimoto
+windows:
+  - server: rails s -p 3000 -b lvh.me
+  - front_server: sh -c 'rm app/assets/webpack/* || true && cd client && npm run build:development'
+  - rails_console: rails console
+  - bash_console:
