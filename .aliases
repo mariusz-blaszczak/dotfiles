@@ -2,7 +2,14 @@ alias copy="xclip -sel clip <"
 alias go="git open"
 alias gcf="git diff-tree --no-commit-id --name-only -r" # show files of commit
 alias raket="NO_CLEAN=true bundle exec spring rake test"
+alias st="spring rails test"
+alias rt="rails test"
+alias mpp="mux panel-producenta"
 alias gb="git branch | grep ''"
 alias rrg="rake routes | grep "
 alias d=docker
+alias mpp="mux panel-producenta"
+alias mpd="mux panel-detalisty"
+alias msms="mux mnotification2"
+alias mk="tmux kill-server"
 
