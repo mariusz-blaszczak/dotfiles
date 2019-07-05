@@ -4,6 +4,7 @@ alias gcf="git diff-tree --no-commit-id --name-only -r" # show files of commit
 alias raket="NO_CLEAN=true bundle exec spring rake test"
 alias st="spring rails test"
 alias rt="rails test"
+alias rts="rails test:system"
 alias mpp="mux panel-producenta"
 alias gb="git branch | grep ''"
 alias rrg="rake routes | grep "
