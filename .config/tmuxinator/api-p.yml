@@ -1,0 +1,9 @@
+# /Users/mariusz/.config/tmuxinator/panel-producenta.yml
+
+name: api-p
+root: /Users/mariusz/Projects/Ruby/mplatform/api-p
+
+windows:
+  - server: bundle exec rails s -p $(cat ~/.puma-dev/api-p)
+  - bash: alias spring=/Users/mariusz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/spring-2.0.2/bin/spring
+  - rails_console: bundle exec rails c
