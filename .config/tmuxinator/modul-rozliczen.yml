@@ -1,0 +1,9 @@
+# /Users/mariusz/.config/tmuxinator/modul-rozliczen.yml
+
+name: modul-rozliczen
+root: /Users/mariusz/Projects/Ruby/mplatform/modul-rozliczen
+
+windows:
+  - server: bundle exec rails s -p $(cat ~/.puma-dev/modul-rozliczen)
+  - bash: alias spring=/Users/mariusz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/spring-2.0.2/bin/spring
+  - rails_console: bundle exec rails c
