@@ -44,3 +44,7 @@ function reload_pg() {
   echo "brew services start postgresql"
   echo "brew services list"  
 }
+
+function fp() {
+  grep -rn --include \*.html.erb "$1" . | grep render
+}
