@@ -48,3 +48,9 @@ function reload_pg() {
 function fp() {
   grep -rn --include \*.html.erb "$1" . | grep render
 }
+
+# Uses git-open to open commit specified as argument
+function goc {
+  local commit_base_url=$(git open -c -p | sed 's:commit/.*:commit:g')
+  open "$commit_base_url/$1"
+}
