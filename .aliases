@@ -7,11 +7,10 @@ alias rt="rails test"
 alias rts="rails test:system"
 alias mpp="mux panel-producenta"
 alias gb="git branch | grep ''"
-alias rrg="rails routes | grep "
 alias d=docker
 alias mpp="mux panel-producenta"
 alias mpd="mux panel-detalisty"
 alias mmr="mux modul-rozliczen"
 alias msms="mux mnotification2"
 alias mk="tmux kill-server"
-
+alias mw="open https://github.com/neublocpl/mplatform/wiki/Ubiquitous-language-\(nomenklatura\)"

@@ -54,3 +54,7 @@ function goc {
   local commit_base_url=$(git open -c -p | sed 's:commit/.*:commit:g')
   open "$commit_base_url/$1"
 }
+
+function rgr() {
+  rails routes | grep "$1" | grep "$2" | grep "$3"
+}
