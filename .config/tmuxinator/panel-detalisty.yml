@@ -10,3 +10,4 @@ windows:
   - rails_console: rails console
   - guard_rubocop: /Users/mariusz/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/guard-2.15.0/bin/guard
   - bullet log: tail -f log/bullet.log
+  - tests log: tail -f log/test.log
