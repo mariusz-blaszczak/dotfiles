@@ -12,6 +12,14 @@ ln -svf $(pwd)/.config/tmuxinator ~/.config
 ln -sv $(pwd)/.puma-dev ~/
 ```
 
+### Iterm2
+1. Create symlink
+   ```bash
+   cd ~
+   ln -sv Projects/dotfiles/Iterm2_custom_settings .
+   ```
+2. How to use these settings: https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles/23356086#23356086
+
 ## How to add another dotfile to this repo(e.g. .tmux.conf)
 1. Execute commands
 ```
