@@ -2,7 +2,8 @@
 
 name: panel-detalisty
 root: /Users/mariusz/Projects/Ruby/mplatform/panel-kupca
-
+attach: false
+on_project_exit: tmux -CC attach
 
 windows:
   - server: bundle exec rails s -p $(cat ~/.puma-dev/panel-detalisty)
