@@ -5,6 +5,7 @@ alias raket="NO_CLEAN=true bundle exec spring rake test"
 alias st="spring rails test"
 alias rt="rails test"
 alias rts="rails test:system"
+alias brt="BROWSER=true rails test"
 alias mpp="mux panel-producenta"
 alias gb="git branch | grep ''"
 alias d=docker
