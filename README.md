@@ -19,6 +19,9 @@ ln -sv $(pwd)/.puma-dev ~/
    ln -sv Projects/dotfiles/Iterm2_custom_settings .
    ```
 2. How to use these settings: https://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles/23356086#23356086
+3. Open Preferences -> Profiles -> Advanced -> Semantic History
+4. Set there: Run command...
+5. Paste there: `/Users/mariusz/Projects/dotfiles/bin/open-in-rubymine \1 \2`
 
 ## How to add another dotfile to this repo(e.g. .tmux.conf)
 1. Execute commands

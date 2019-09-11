@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+file = ARGV[0]
+line = ARGV[1]
+rubymine_path = '"/Users/mariusz/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/191.7141.58/RubyMine.app/Contents/MacOS/rubymine"'
+
+command = [rubymine_path]
+command.push("--line #{line}") if line && line.length > 0
+command.push(file)
+
+exec(command.join(" "))
