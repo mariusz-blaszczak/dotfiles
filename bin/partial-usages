@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require 'pry'
+require 'securerandom'
+
+class PartialUsages
+  def initialize
+    @session_id = SecureRandom.hex(5)
+  end
+
+  def call
+    result = `pbpaste`
+    log result
+    result = without_file_number(result)
+    result = without_dash_prefix(result)
+    result = without_extensions(result)
+    result = without_unneeded_dirs(result)
+    log result
+    copy_to_clipboard(result)
+  end
+
+  private
+
+  def without_file_number(result)
+    result.split(":").first
+  end
+
+  def without_dash_prefix(result)
+    result.gsub(/\/_/, "/")
+  end
+
+  def without_extensions(result)
+    result.gsub(".html", "").gsub(".erb", "")
+  end
+
+  def without_unneeded_dirs(result)
+    result.gsub("app/", "").gsub("views/", "")
+  end
+
+  def log(text)
+    log_text = "[#{@session_id}][#{Time.now}] - #{text}\n"
+    puts log_text
+    File.open("/Users/mariusz/Projects/dotfiles/log/partial-usages.log", "a+") do |f|
+      f.write(log_text)
+    end
+  end
+
+  def copy_to_clipboard(result)
+    `echo #{result} | pbcopy`
+  end
+end
+
+puts PartialUsages.new.call
+
+
+
