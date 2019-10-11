@@ -12,3 +12,5 @@ windows:
   - redis: bundle exec foreman start
   - guard: /Users/mariusz/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/guard-2.15.0/bin/guard --no-bundler-warning
   - tests log: tail -f log/test.log
+  - sidekiq_log: tail -f log/sidekiq.log
+  - sidekiq_unique_log: tail -f log/sidekiq_unique.log
