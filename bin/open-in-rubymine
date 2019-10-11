@@ -1,12 +1,41 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-file = ARGV[0]
-line = ARGV[1]
-rubymine_path = '"/Users/mariusz/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/191.7141.58/RubyMine.app/Contents/MacOS/rubymine"'
+class OpenInRubymine
+  attr_reader :file, :pwd, :line, :rubymine_path
+  def initialize
+    @file = ARGV[0]
+    @pwd = ARGV[1]
+    @line = ARGV[2]
+    @rubymine_path = '"/Users/mariusz/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/192.6817.16/RubyMine.app/Contents/MacOS/rubymine"'
+  end
 
-command = [rubymine_path]
-command.push("--line #{line}") if line && line.length > 0
-command.push(file)
+  def call
+    command = [rubymine_path]
+    command.push("--line #{line}") if line && line.length > 0
 
-exec(command.join(" "))
+    full_path_file = []
+    full_path_file.push(pwd) unless file.include?("Users")
+    full_path_file.push(file)
+
+    full_path_file_join = full_path_file.join("/")
+    log full_path_file_join
+    command.push(full_path_file_join)
+
+    command_join = command.join(" ")
+    log command_join
+    exec(command_join)
+  end
+
+  private
+
+  def log(text)
+    log_text = "[#{@session_id}][#{Time.now}] - #{text}\n"
+    puts log_text
+    File.open("/Users/mariusz/Projects/dotfiles/log/open-in-rubymine.log", "a+") do |f|
+      f.write(log_text)
+    end
+  end
+end
+
+OpenInRubymine.new.call
