@@ -6,9 +6,9 @@ attach: false
 on_project_exit: tmux -CC attach
 
 windows:
-  - server: bundle exec rails s -p $(cat ~/.puma-dev/panel-producenta)
+  - server: export PORT=$(cat ~/.puma-dev/panel-producenta) ; rs
   - bash: alias spring=/Users/mariusz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/spring-2.0.2/bin/spring
-  - rails_console: bundle exec rails c
+  - rails_console: rc
   - redis: bundle exec foreman start
   - guard: /Users/mariusz/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/guard-2.15.0/bin/guard --no-bundler-warning
   - tests log: tail -f log/test.log
