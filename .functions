@@ -58,3 +58,11 @@ function goc {
 function rgr() {
   rails routes | grep "$1" | grep "$2" | grep "$3"
 }
+
+function rgt(){
+  rails g test_unit:"$1" "$2" --no-fixture
+}
+
+function is() {
+  open "https://gitlab.mparagon.pl/Projekt/trackers/issues/issues/$1"
+}

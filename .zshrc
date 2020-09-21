@@ -55,6 +55,7 @@ setopt nocorrectall
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+export HISTORY_IGNORE="(ls|cd|pwd|exit|cd|gs)"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -131,3 +132,4 @@ export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.bin/tmuxinator.zsh
+
