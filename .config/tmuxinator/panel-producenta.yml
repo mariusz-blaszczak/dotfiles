@@ -4,13 +4,15 @@ name: panel-producenta
 root: /Users/mariusz/Projects/Ruby/mplatform/panel-producenta
 attach: false
 on_project_exit: tmux -CC attach
-
+pre_window: export PORT=$(cat ~/.puma-dev/panel-producenta)
+startup_window: bash
 windows:
-  - server: export PORT=$(cat ~/.puma-dev/panel-producenta) ; rs
-  - bash: alias spring=/Users/mariusz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/spring-2.0.2/bin/spring
+  - server: rs
+  - bash: echo "Hello"
   - rails_console: rc
   - redis: bundle exec foreman start
-  - guard: /Users/mariusz/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/guard-2.15.0/bin/guard --no-bundler-warning
+  - guard: guard --no-bundler-warning
+  - bullet log: tail -f log/bullet.log
   - tests log: tail -f log/test.log
   - sidekiq_log: tail -f log/sidekiq.log
   - sidekiq_unique_log: tail -f log/sidekiq_unique.log

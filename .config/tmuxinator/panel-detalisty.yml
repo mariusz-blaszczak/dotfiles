@@ -4,12 +4,13 @@ name: panel-detalisty
 root: /Users/mariusz/Projects/Ruby/mplatform/panel-kupca
 attach: false
 on_project_exit: tmux -CC attach
+pre_window: export PORT=$(cat ~/.puma-dev/panel-detalisty)
 
 windows:
-  - server: export PORT=$(cat ~/.puma-dev/panel-detalisty) ; rs
-  - bash_console: alias spring=/Users/mariusz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/spring-2.0.2/bin/spring
+  - server: rs
+  - bash_console: echo "bash"
   - rails_console: rc
   - sidekiq_and_redis:  bundle exec foreman start
-  - guard_rubocop: /Users/mariusz/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/guard-2.15.0/bin/guard
+  - guard_rubocop: bundle exec guard
   - bullet log: tail -f log/bullet.log
   - tests log: tail -f log/test.log

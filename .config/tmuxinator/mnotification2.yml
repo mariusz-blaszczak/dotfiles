@@ -2,11 +2,14 @@
 
 name: mnotification2
 root: /Users/mariusz/Projects/Ruby/mplatform/csp.mnotification2
-
+on_project_exit: tmux -CC attach
+attach: false
+pre_window: export PORT=$(cat ~/.puma-dev/mnotification)
+startup_window: bash
 windows:
-  - rails_server: bundle exec rails s -p $(cat ~/.puma-dev/mnotification)
+  - rails_server: rs
+  - bash: echo "Hello"
+  - rails_console: rails c
   - redis_i_sidekiq: foreman start -f Procfile.development
   - sidekiq_log: tail -f log/sidekiq.log
   - guard: /Users/mariusz/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/guard-2.15.0/bin/guard
-  - rails_console: rails c
-  - bash: 
