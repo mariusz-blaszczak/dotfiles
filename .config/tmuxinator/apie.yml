@@ -1,0 +1,18 @@
+# /Users/mariusz/.config/tmuxinator/panel-producenta.yml
+
+name: panel-producenta
+root: /Users/mariusz/Projects/Ruby/mplatform/panel-producenta
+attach: false
+on_project_exit: tmux -CC attach
+pre_window: export PORT=$(cat ~/.puma-dev/panel-producenta)
+startup_window: bash
+windows:
+  - server: rs
+  - bash: echo "Hello"
+  - rails_console: rc
+  - redis: bundle exec foreman start
+  - guard: guard --no-bundler-warning
+  - bullet log: tail -f log/bullet.log
+  - tests log: tail -f log/test.log
+  - sidekiq_log: tail -f log/sidekiq.log
+  - sidekiq_unique_log: tail -f log/sidekiq_unique.log

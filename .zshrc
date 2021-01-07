@@ -69,6 +69,7 @@ plugins=(
   bundler
   rails
   git-open
+  dotenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -133,3 +134,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.bin/tmuxinator.zsh
 
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"

@@ -7,7 +7,7 @@ on_project_exit: tmux -CC attach
 pre_window: export PORT=$(cat ~/.puma-dev/panel-detalisty)
 
 windows:
-  - server: rs
+  - server: DISABLE_SLOW_THINGS=true rails s
   - bash_console: echo "bash"
   - rails_console: rc
   - sidekiq_and_redis:  bundle exec foreman start

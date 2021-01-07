@@ -1,3 +1,4 @@
+
 alias copy="xclip -sel clip <"
 alias go="git open"
 alias gcf="git diff-tree --no-commit-id --name-only -r" # show files of commit
@@ -16,3 +17,4 @@ alias msms="mux mnotification2"
 alias mk="tmux kill-server"
 alias mw="open https://github.com/neublocpl/mplatform/wiki/Ubiquitous-language-\(nomenklatura\)"
 alias pend="mppending"
+alias short="twzer sh"

@@ -1,0 +1,9 @@
+# /Users/mariusz/.config/tmuxinator/proxymail.yml
+
+name: proxymail
+root: /Users/mariusz/Projects/Ruby/mplatform/proxy.mail
+attach: false
+on_project_exit: tmux -CC attach
+startup_window: bash
+windows:
+  - bash: echo "Hello"
