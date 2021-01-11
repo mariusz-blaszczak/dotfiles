@@ -137,4 +137,3 @@ source ~/.bin/tmuxinator.zsh
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
