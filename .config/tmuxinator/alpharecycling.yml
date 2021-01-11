@@ -1,0 +1,13 @@
+# /Users/mariusz/.config/tmuxinator/alpharecycling.yml
+
+name: alpharecycling
+root: /Users/mariusz/Projects/Ruby/alpharecycling
+attach: false
+on_project_exit: tmux -CC attac
+startup_window: bash
+
+windows:
+  - server: rails s -b 0.0.0.0
+  - bash: 
+  - rails_console: rails c
+  - client: yarn run build:dev:client
