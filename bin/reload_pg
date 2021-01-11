@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "pry"
+
+class ReloadPg
+  def call
+    puts "1. Check if there is problem:"
+    puts `brew services list`
+    puts ""
+    puts `brew services stop postgresql`
+    puts "2. Check postgres pid"
+    postgres_pid = `pg_ctl -D /usr/local/var/postgres status`.match(/PID: (\d+)/)[1]
+    puts "   PID: #{postgres_pid}"
+    `pg_ctl -D /usr/local/var/postgres kill KILL #{postgres_pid}`
+    puts ""
+    puts `brew services start postgresql`
+    puts `brew services list`
+  end
+end
+
+# function reload_pg() {
+#   echo "brew services stop postgresql"
+#   echo "pg_ctl -D /usr/local/var/postgres stop"
+#   echo "brew services start postgresql"
+#   echo "brew services list"
+#   echo ""
+#   echo "OR:"
+#   echo "brew services stop postgresql"
+#   echo "pg_ctl -D /usr/local/var/postgres status"
+#   echo "pg_ctl -D /usr/local/var/postgres kill KILL 385"
+#   echo "brew services start postgresql"
+#   echo "brew services list"
+# }
+
+ReloadPg.new.call
