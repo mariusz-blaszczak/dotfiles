@@ -56,7 +56,7 @@ function goc {
 }
 
 function rgr() {
-  rails routes | grep "$1" | grep "$2" | grep "$3"
+  rake routes | grep "$1" | grep "$2" | grep "$3"
 }
 
 function rgt(){
