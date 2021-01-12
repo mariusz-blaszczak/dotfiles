@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+issue_name = `pbpaste`
+branch_name = issue_name.gsub(" ", "-")
+`echo #{branch_name} | pbcopy`
