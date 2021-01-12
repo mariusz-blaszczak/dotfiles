@@ -11,3 +11,4 @@ windows:
   - bash: 
   - rails_console: rails c
   - client: yarn run build:dev:client
+  - sidekiq: bundle exec bin/sidekiq
