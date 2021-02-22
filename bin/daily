@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pry'
+require 'date'
+
+class Daily
+  def open_report
+    today = Time.now.to_date
+    previous_business_day = previous_business_day(today)
+
+    from_date = format_date(previous_business_day)
+    to_date = format_date(today)
+    url = url(from_date, to_date)
+    puts url
+    `open '#{url}'`
+  end
+
+  private
+
+  def format_date(date)
+    date.strftime("%d.%m.%Y")
+  end
+
+  def url(from_date, to_date)
+    "https://intranet.akra.de/users/mabl/time_sheet/export?utf8=%E2%9C%93&key=Alle+Projekte" \
+    "&from_date=#{from_date}&to_date=#{to_date}&form_select_by_date=Report"
+  end
+
+  def previous_business_day(date)
+    inc = -1
+    date += inc
+    while date.wday == 0 || date.wday == 6
+      date += inc
+    end
+    date
+  end
+end
+
+Daily.new.open_report
