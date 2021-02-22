@@ -12,3 +12,4 @@ windows:
   - rails_console: rails c
   - client: yarn run build:dev:client
   - sidekiq: bundle exec bin/sidekiq
+  - postgres: pg_ctl start
