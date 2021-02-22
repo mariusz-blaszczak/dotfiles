@@ -1,13 +1,35 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "active_support/core_ext/string/inflections.rb"
+require 'active_support/core_ext/string/inflections'
+require "pry"
 
-issue_name = `pbpaste`
-# puts issue_name
-branch_name = issue_name.parameterize
-# puts branch_name
-command = "echo #{branch_name} | pbcopy"
-# puts command
-`#{command}`
+class BranchName
+  def call
+    issue_name = `pbpaste`
+    puts issue_name
+    branch_name = parameterize(issue_name)
+    puts branch_name
+    command = "echo #{branch_name} | pbcopy"
+    puts command
+    `#{command}`
+  end
+
+  private
+
+  # Copy pasted from lib/active_support/inflector/transliterate.rb:81
+  def parameterize(string, sep = '-')
+    parameterized_string = ActiveSupport::Inflector.transliterate(string)
+    parameterized_string.gsub!(/[^a-z0-9\-_]+/i, sep)
+    unless sep.nil? || sep.empty?
+      re_sep = Regexp.escape(sep)
+      parameterized_string.gsub!(/#{re_sep}{2,}/, sep)
+      parameterized_string.gsub!(/^#{re_sep}|#{re_sep}$/i, '')
+    end
+    parameterized_string
+  end
+end
+
+BranchName.new.call
+
 
