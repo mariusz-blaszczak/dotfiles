@@ -1,6 +1,13 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require "active_support/core_ext/string/inflections.rb"
+
 issue_name = `pbpaste`
-branch_name = issue_name.gsub(" ", "-")
-`echo #{branch_name} | pbcopy`
+# puts issue_name
+branch_name = issue_name.parameterize
+# puts branch_name
+command = "echo #{branch_name} | pbcopy"
+# puts command
+`#{command}`
+
