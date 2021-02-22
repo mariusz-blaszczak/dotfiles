@@ -137,3 +137,4 @@ source ~/.bin/tmuxinator.zsh
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 
+. $HOME/.asdf/asdf.sh
