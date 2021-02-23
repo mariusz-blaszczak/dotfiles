@@ -3,15 +3,21 @@
 
 require 'active_support/core_ext/string/inflections'
 require "pry"
+require 'logger'
+
 
 class BranchName
+  def initialize
+    # @logger = Logger.new("/Users/mariusz/Desktop/branch_name.log")
+  end
+
   def call
     issue_name = `pbpaste`
-    puts issue_name
+    # @logger.info(issue_name)
     branch_name = parameterize(issue_name)
-    puts branch_name
+    # @logger.info(branch_name)
     command = "echo #{branch_name} | pbcopy"
-    puts command
+    # @logger.info(command)
     `#{command}`
   end
 
