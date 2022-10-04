@@ -8,8 +8,7 @@ startup_window: bash
 
 windows:
   - server: rails s -b 0.0.0.0
-  - bash: 
   - rails_console: rails c
-  - client: yarn run build:dev:client
-  - sidekiq: bundle exec bin/sidekiq
-  - postgres: pg_ctl start
+  - client: dotenv yarn run build:dev:client
+  - sidekiq: dotenv bundle exec bin/sidekiq
+  - shell: echo "Hello Mariusz"

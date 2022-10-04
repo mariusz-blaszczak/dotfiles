@@ -21,3 +21,5 @@ alias mw="open https://github.com/neublocpl/mplatform/wiki/Ubiquitous-language-\
 alias pend="mppending"
 alias short="twzer sh"
 alias daily="~/Projects/dotfiles/bin/daily"
+alias merge="OVERCOMMIT_DISABLE=1 bundle exec bin/merge.rb pr"
+alias pro="bundle exec pronto run -c develop"

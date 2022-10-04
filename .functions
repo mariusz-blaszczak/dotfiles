@@ -42,7 +42,7 @@ function reload_pg() {
   echo "pg_ctl -D /usr/local/var/postgres status"
   echo "pg_ctl -D /usr/local/var/postgres kill KILL 385"
   echo "brew services start postgresql"
-  echo "brew services list"  
+  echo "brew services list"
 }
 
 function fp() {
@@ -65,4 +65,12 @@ function rgt(){
 
 function is() {
   open "https://gitlab.mparagon.pl/Projekt/trackers/issues/issues/$1"
+}
+
+function sid() {
+  cat log/development.log | grep "$1" | grep SELECT
+}
+
+function sidc() {
+   cat log/development.log | grep "$1" | grep SELECT | wc -l
 }

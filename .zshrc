@@ -69,7 +69,6 @@ plugins=(
   bundler
   rails
   git-open
-  dotenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -84,27 +83,12 @@ unsetopt correct_all
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 source "$HOME/.slimzsh/slim.zsh"
 eval "$(rbenv init -)"
 
@@ -113,6 +97,12 @@ if command -v brew >/dev/null 2>&1; then
 	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 fi
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # Save your nvm env loading into your .bash_profile or similar
 #if [[ $(brew ls --versions nvm) ]]
@@ -122,19 +112,16 @@ fi
 #fi
 
 setopt nocorrectall
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-#export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
-export LDFLAGS="-L/usr/local/opt/libxml2/lib"
-export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.bin/tmuxinator.zsh
 
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
-
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
 . $HOME/.asdf/asdf.sh
